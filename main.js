@@ -11,4 +11,9 @@ function createWindow () {
 
 app.whenReady().then(() => {
   createWindow();
-});
+
+});const { autoUpdater } = 
+  require("electron-updater");
+
+autoUpdater.checkForUpdatesAndNotify(
+  );
