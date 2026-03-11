@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>THANOS AI</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+background:url("fundo.jpg") no-repeat center center;
+background-size:cover;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Arial;
+}
+
+/* caixa transparente */
+.login{
+background:rgba(0,0,0,0.65);
+padding:40px;
+border-radius:12px;
+text-align:center;
+color:white;
+backdrop-filter:blur(5px);
+}
+
+/* imagem do thanos */
+.login img{
+width:180px;
+margin-bottom:10px;
+}
+
+/* campos */
+input{
+width:260px;
+padding:10px;
+margin:8px;
+border:none;
+border-radius:6px;
+}
+
+/* botão */
+button{
+width:280px;
+padding:12px;
+background:#7b00ff;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#5200cc;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login">
+
+<img src="thanos.png">
+
+<h2>THANOS AI</h2>
+
+<input id="email" type="email" placeholder="Email"><br>
+
+<input id="senha" type="password" placeholder="Senha"><br>
+
+<button onclick="entrar()">Entrar</button>
+
+</div>
+
+<script>
+
+/* quando abrir o app */
+window.onload = function(){
+
+let usuario = localStorage.getItem("usuarioLogado");
+
+if(usuario){
+alert("Bem vindo de volta!");
+}
+
+}
+
+/* botão entrar */
+function entrar(){
+
+let email = document.getElementById("email").value;
+let senha = document.getElementById("senha").value;
+
+if(email === "" || senha === ""){
+alert("Digite email e senha");
+return;
+}
+
+/* salva login automático */
+localStorage.setItem("usuarioLogado", email);
+
+window.location.href = "painel.html";
+
+}
+
+</script>
+
+</body>
+</html>
